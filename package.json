@@ -1,0 +1,15 @@
+{
+  "name": "vidhilens",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "db:start": "docker compose up -d",
+    "db:stop": "docker compose down",
+    "dev": "concurrently -n \"web,ml\" -c \"cyan,magenta\" \"npm run dev --prefix apps/web\" \"npm run ml\"",
+    "ml": "cd apps/ml-service && .venv\\Scripts\\activate && uvicorn app.main:app --reload --port 8000",
+    "health": "curl -s http://localhost:3000/api/health"
+  },
+  "devDependencies": {
+    "concurrently": "latest"
+  }
+}
