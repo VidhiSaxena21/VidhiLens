@@ -1,0 +1,11 @@
+node_modules/
+.env
+data/raw/
+data/interim/
+__pycache__/
+.venv/
+.next/
+*.pt
+*.bin
+*.egg-info/
+dist/
